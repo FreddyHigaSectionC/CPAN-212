@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore - Book Details</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .book-detail {
+      display: flex;
+      gap: 30px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-detail img {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .book-detail-info {
+      flex: 1;
+    }
+
+    .book-detail-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .book-detail-info p {
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .book-detail-info button {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .book-detail-info button:hover {
+      background-color: #575757;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bookstore - Book Details</h1>
+    <p>Explore our diverse collection of books</p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/product">Product</a>
+    <a href="cart">Cart</a>
+    <a href="contact">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <div class="book-detail">
+      <img
+        src="https://images-platform.99static.com//luh7x7hyQ1f_1qozE66unKY3vqE=/0x0:1024x1024/fit-in/500x500/99designs-contests-attachments/146/146565/attachment_146565768"
+        alt="Book Cover">
+      <div class="book-detail-info">
+        <h3>Book Title</h3>
+        <p><strong>Author:</strong> Author Name</p>
+        <p><strong>Price:</strong> $19.99</p>
+        <p><strong>Description:</strong> A detailed description of the book goes here. It's a great read that you won't
+          want to put down.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Bookstore | All rights reserved</p>
+  </footer>
+
+</body>
+
+</html>

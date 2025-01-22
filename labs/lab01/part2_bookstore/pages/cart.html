@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    /* Same styles for consistency */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: white;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item p {
+      margin: 0;
+      color: #555;
+    }
+
+    .total {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .checkout-button {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .checkout-button:hover {
+      background-color: #575757;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Your Cart</h1>
+    <p>Your Cart - Review and proceed to checkout</p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/product">Product</a>
+    <a href="cart">Cart</a>
+    <a href="contact">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <h2>Items in Your Cart</h2>
+
+    <div id="cart-items-container"></div>
+
+    <div class="total" id="total-price">Total: $0.00</div>
+
+    <button class="checkout-button" id="checkout-button">Proceed to Checkout</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Bookstore | All rights reserved</p>
+  </footer>
+
+  <script>
+    // Initialize the cart items
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Function to update the cart display
+    function updateCartDisplay() {
+      const cartContainer = document.getElementById('cart-items-container');
+      cartContainer.innerHTML = ''; // Clear current cart display
+      let total = 0;
+
+      // Loop through cart items and display them
+      cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        itemElement.innerHTML = `
+          <p>${item.title}</p>
+          <p>Quantity: ${item.quantity}</p>
+          <p>$${(item.price * item.quantity).toFixed(2)}</p>
+        `;
+        cartContainer.appendChild(itemElement);
+        total += item.price * item.quantity;
+      });
+
+      // Update total price
+      document.getElementById('total-price').textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    // Handle Add to Cart button click
+    document.querySelectorAll('#add-to-cart').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const bookId = e.target.getAttribute('data-book-id');
+        const bookTitle = e.target.getAttribute('data-book-title');
+        const bookPrice = parseFloat(e.target.getAttribute('data-book-price'));
+
+        // Check if the item is already in the cart
+        const existingItem = cart.find(item => item.id === bookId);
+        if (existingItem) {
+          existingItem.quantity += 1; // Increment quantity if already in cart
+        } else {
+          cart.push({ id: bookId, title: bookTitle, price: bookPrice, quantity: 1 });
+        }
+
+        // Save cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update cart display
+        updateCartDisplay();
+      });
+    });
+
+    // Handle Checkout button click
+    document.getElementById('checkout-button').addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('Your cart is empty.');
+      } else {
+        alert('Proceeding to checkout...');
+      }
+    });
+
+    // Initial display of the cart
+    updateCartDisplay();
+  </script>
+
+</body>
+
+</html>

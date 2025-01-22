@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore Home Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .featured-books {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .book-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .book-card h3 {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .book-card p {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Welcome to Our Bookstore</h1>
+    <p>Your one-stop shop for books of all genres!</p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/product">Product</a>
+    <a href="cart">Cart</a>
+    <a href="contact">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <h2>Featured Books</h2>
+    <div class="featured-books">
+      <div class="book-card">
+        <img
+          src="https://images-platform.99static.com//luh7x7hyQ1f_1qozE66unKY3vqE=/0x0:1024x1024/fit-in/500x500/99designs-contests-attachments/146/146565/attachment_146565768"
+          alt="Book 1">
+        <h3>Book Title 1</h3>
+        <p>Author: Author 1</p>
+      </div>
+      <div class="book-card">
+        <img
+          src="https://images-platform.99static.com//luh7x7hyQ1f_1qozE66unKY3vqE=/0x0:1024x1024/fit-in/500x500/99designs-contests-attachments/146/146565/attachment_146565768"
+          alt="Book 2">
+        <h3>Book Title 2</h3>
+        <p>Author: Author 2</p>
+      </div>
+      <div class="book-card">
+        <img
+          src="https://images-platform.99static.com//luh7x7hyQ1f_1qozE66unKY3vqE=/0x0:1024x1024/fit-in/500x500/99designs-contests-attachments/146/146565/attachment_146565768"
+          alt="Book 3">
+        <h3>Book Title 3</h3>
+        <p>Author: Author 3</p>
+      </div>
+      <div class="book-card">
+        <img
+          src="https://images-platform.99static.com//luh7x7hyQ1f_1qozE66unKY3vqE=/0x0:1024x1024/fit-in/500x500/99designs-contests-attachments/146/146565/attachment_146565768"
+          alt="Book 4">
+        <h3>Book Title 4</h3>
+        <p>Author: Author 4</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Bookstore | All rights reserved</p>
+  </footer>
+
+</body>
+
+</html>
