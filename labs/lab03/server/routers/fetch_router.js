@@ -27,18 +27,13 @@ router.get("/single", (req, res) => {
   res.sendFile(path.join(upload_directory, filename));
 });
 
-// helper function for multiple 
-router.get("/file/:filename", (req, res) => {
-  res.sendFile(path.join(__dirname, "../uploads", req.params.filename));
-});
-
 // TO DO, send array of filenames [TODO]
 router.get("/multiple", (req, res) => {
 
-  // 1 - find the directory/read the directory
+  // find the directory/read the directory
   let files_array = fs.readdirSync(upload_directory);
 
-  // 2 - error check
+  // error check
   if (files_array.length == 0) {
     // adding return will stop the rest of the operations
     return res.status(503).send({
@@ -46,12 +41,17 @@ router.get("/multiple", (req, res) => {
     });
   }
 
-  // 3 - run lodash to find random filename, NOT THE FILE
+  // run lodash to find random filename, NOT THE FILE
   let filenames = _.sampleSize(files_array, 3);
+  console.log(filenames) // delete later
 
-  // 4 - send file
-  res.json(filenames)
+  // send file
+  res.json(filenames) // -> [01, 02, 03, 04, o5]
+});
 
+// helper function for multiple 
+router.get("/file/:filename", (req, res) => {
+  res.sendFile(path.join(__dirname, "../uploads", req.params.filename));
 });
 
 // reacts asks for files, gets [01, 02, 03]
