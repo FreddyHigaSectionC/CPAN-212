@@ -189,8 +189,9 @@ function App() {
 
         <div className='resumeContainer'>
           <h1 className='spacer'>My Online Resume</h1>
+          <h2 className='titleText'>FREDDY HIGA - COMPUTER PROGRAMMING</h2>
 
-          <div className='buttonContainer spacer'>
+          <div className='buttonContainer'>
             <button
               className={selectedSection === 'overview' ? 'active' : ''}
               onClick={() => setSelectedSection('overview')}
@@ -229,13 +230,6 @@ function App() {
             </button>
           </div>
 
-          {/* {selectedSection === 'overview' && (
-            <>
-              <h2>Overview</h2>
-              <p className='overviewText'>{overview}</p>
-            </>
-          )} */}
-
           {selectedSection === 'overview' && (
             <>
               <h2>Overview</h2>
@@ -257,7 +251,7 @@ function App() {
                     alt='Humber College'
                     style={{
                       width: 'auto',
-                      height: '380px',
+                      height: '340px',
                       borderRadius: '10px',
                       marginBottom: '5px',
                     }}
@@ -282,7 +276,7 @@ function App() {
               <h2>Experience</h2>
               {experience.map((exp, index) => (
                 <p key={index}>
-                  <span style={{ fontWeight: 'bold', color: '#a8c0ff' }}>
+                  <span style={{ fontWeight: 'bold', color: '#a8ffb8' }}>
                     {exp.company} - {exp.role} ({exp.year})
                   </span>
                 </p>
@@ -320,7 +314,7 @@ function App() {
                   .filter((sk) => sk.technicalSkill)
                   .map((sk, index) => (
                     <li key={index}>
-                      <span style={{ fontWeight: 'bold', color: '#a8c0ff' }}>
+                      <span style={{ fontWeight: 'bold', color: '#a8ffb8' }}>
                         Technical Skills:{' '}
                       </span>
                       {sk.technicalSkill}
@@ -333,7 +327,7 @@ function App() {
                   .filter((sk) => sk.softSkill)
                   .map((sk, index) => (
                     <li key={index}>
-                      <span style={{ fontWeight: 'bold', color: '#a8c0ff' }}>
+                      <span style={{ fontWeight: 'bold', color: '#a8ffb8' }}>
                         Soft Skills:{' '}
                       </span>
                       {sk.softSkill}
@@ -382,10 +376,15 @@ function App() {
           )}
         </div>
       </div>
+
       <div className='linkContainer'>
-        <p>Visit: </p>
-        <button onClick={handleLinkedin}>LinkedIn</button>
-        <button onClick={handleGithub}>GitHub</button>
+        <p>Let&apos;s connect:</p>
+        <button className='linkButton' onClick={handleLinkedin}>
+          LinkedIn
+        </button>
+        <button className='linkButton' onClick={handleGithub}>
+          GitHub
+        </button>
       </div>
     </div>
   );
