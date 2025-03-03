@@ -189,7 +189,7 @@ function App() {
 
         <div className='resumeContainer'>
           <h1 className='spacer'>My Online Resume</h1>
-          <h2 className='titleText'>FREDDY HIGA - COMPUTER PROGRAMMING</h2>
+          <h2 className='titleText'>FREDDY HIGA - SOFTWARE ENGINEERING</h2>
 
           <div className='buttonContainer'>
             <button

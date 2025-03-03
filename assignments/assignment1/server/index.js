@@ -19,23 +19,23 @@ app.use("/fetch", fetch_router);
 
 const resumeData = {
   education: [
-    { school: "Humber Polytechnic", degree: "Diploma in Computer Programming", year: "2024-2025" },
-    { school: "CIBERTEC Private Higher Institute", degree: "Diploma in Graphic Design", year: "2008-2011" },
+    { school: "Humber Polytechnic", degree: "Diploma in Software Engineering", year: "2018 - 2019" },
+    { school: "University of Lima", degree: "Degree in Systems Engineering", year: "2013 - 2017" },
   ],
   experience: [
-    { company: "National Newspaper Company", role: "Infographic Designer", year: "2011 - 2020" }
+    { company: "Global Tech Media", role: "UI/UX Designer", year: "2020 - 2025" }
   ],
   relevant_experience: [
-    "Created infographics and designs for several newspapers and magazines, enhancing visual communication and publication design.",
-    "Presented complex data in a visually engaging and easily understandable format.",
-    "Developed innovative designs that captured audience attention.",
-    "Aligned visual content with written narratives for journalist, editors.",
-    "Managed multiple projects and deadlines under a high-pressure environment.",
-    "Adjusted designs and concepts based on feedback and changing editorial needs."
+    "Designed user-friendly interfaces and experiences for web and mobile applications, improving usability and engagement.",
+    "Developed wireframes, prototypes, and visual assets for various digital platforms.",
+    "Conducted user research and usability testing to enhance product design.",
+    "Collaborated with developers and product managers to align design with technical requirements.",
+    "Managed multiple design projects, ensuring consistency with brand guidelines.",
+    "Adapted designs based on user feedback, analytics, and emerging design trends."
   ],
   overview: [
-    "I'm a Computer Programming student with a strong foundation in Java, object-oriented programming, data structures, and SQL data management. Currently, I’m working on projects involving Java, Python, web development with React, and mobile app development with React Native, while continuously expanding my technical expertise.",
-    "What distinguishes me is my commitment to delivering high-quality results and my ability to adapt to new challenges. I perform well in collaborative environments where I can contribute my ideas while being open to learning from others. My experiences working on group projects have taught me the importance of communication, respect for diverse perspectives, and maintaining a positive, solution-oriented mindset even under pressure. I always seek to bring a creative and innovative approach to challenges."
+    "I’m a Software Engineering student with a solid background in Python, C++, object-oriented programming, algorithms, and database management with MySQL and PostgreSQL. Currently, I am working on projects involving full-stack web development (React, Node.js), mobile app development (Flutter), and machine learning applications in Python, continuously expanding my technical skill set.",
+    "What sets me apart is my dedication to writing clean, efficient code and my ability to quickly adapt to new technologies. I thrive in team-based environments, where I actively contribute my ideas while embracing feedback to refine and improve my work. My experience in collaborative software development has reinforced my appreciation for effective communication, teamwork, and problem-solving under tight deadlines. I bring a creative and analytical mindset, always striving to develop user-friendly and impactful software solutions."
   ],
   skill: [
     { technicalSkill: "Java, JavaScript, HTML/CSS, SQL, React Native, Python, Linux, Photoshop, and Illustrator" },
