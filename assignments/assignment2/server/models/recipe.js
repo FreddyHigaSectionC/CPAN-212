@@ -26,5 +26,7 @@ const recipeSchema = mongoose.Schema(
   }
 )
 
+// Creates a Mongoose model
 const Recipe = mongoose.model("recipe", recipeSchema);
+
 export default Recipe;
