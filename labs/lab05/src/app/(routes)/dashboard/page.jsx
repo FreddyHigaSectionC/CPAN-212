@@ -8,6 +8,7 @@ import { Budgets, Expenses, Incomes } from '@/utils/schema';
 import BarChartDashboard from './_components/BarChartDashboard';
 import BudgetItem from './budgets/_components/BudgetItem';
 import ExpenseListTable from './expenses/_components/ExpenseListTable';
+
 function Dashboard() {
   const { user } = useUser();
 
